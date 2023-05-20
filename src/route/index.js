@@ -315,7 +315,7 @@ router.get('/bio', function (req, res) {
   res.render('bio', {
     layout: 'bio',
     
-    name: 'Albert Einstein',
+      name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
     birthplace:
       'Ulm, Kingdom of Württemberg, German Empire',
@@ -402,6 +402,9 @@ router.get('/bio', function (req, res) {
         'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
       year: 'Late 15th to early 16th century',
       field: 'Invention',
+    },
+  })
+})
 
 // ================================================================
 
