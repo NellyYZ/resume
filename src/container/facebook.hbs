@@ -1,0 +1,69 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <h1>{{name}}</h1>
+  </main>
+
+  <section>
+    <ol>
+      {{#each users}}
+        <li>
+          <b>USER'S ID: {{id}}</b><br />
+          <h2>{{name}}</h2>
+          <i>{{gender}} / {{age}} y.o.</i>
+        </li>
+        <br>
+
+        <ul>          
+          {{#each friends}}
+            <li>Friend's ID: {{id}} <b>{{name}}</b> {{gender}} / {{age}} y.o. </li>
+            <ul>
+              {{#each mutual_friends}}
+                <li>{{id}} {{name}} {{gender}} {{age}} y.o.</li>
+                <ul>
+                  {{#each mutual_friends}}
+                    <li>{{id}}
+                      {{name}}
+                      {{gender}}
+                      {{age}}</li>
+                  {{/each}}
+                </ul>
+                
+                <ul><strong></strong>{{#each ../groups}}
+                  
+                    <li>GROUP'S ID: {{id}} <b><i>{{name}}</i></b> 
+                      <p>{{description}}</p></li>
+                    <b>Members</b>
+                    <ul>
+                      {{#each members}}
+                        <li>Member ID: {{id}} <b>{{name}}</b> {{gender}} / {{age}} y.o.</li>
+                      {{/each}}
+                    </ul>{{/each}}
+                    
+                </ul>{{/each}}
+            </ul>
+          {{/each}}
+        </ul>
+
+        {{#if groups}}<strong>GROUPS</strong>{{/if}}
+        <ul>{{#each groups}}
+            <li>GROUP'S ID: {{id}} <b><i>{{name}}</i></b> <p>
+              {{description}}
+            </p></li>
+            <b>Members</b>
+            <ul>
+              {{#each members}}
+                <li>Member ID: {{id}} <b>{{name}}</b> {{gender}} / {{age}} y.o.</li>
+              {{/each}}
+            </ul>{{/each}}
+        </ul>
+        <br>
+      {{/each}}
+    </ol>
+    
+  </section>
+</div>
