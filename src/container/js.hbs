@@ -1,0 +1,107 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <h1>{{name}}</h1>
+    <em>{{description}}</em>
+    {{#with history}}
+      <p>
+        First appeared —
+        {{year}}
+      </p>
+      <p>
+        Designed by
+        <b>{{founder}}</b>
+      </p>
+    {{/with}}
+    <hr />
+
+    <section>
+      <h2>Types</h2>
+      <ul>
+        {{#each types}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Syntax</h2>
+      <ul>
+        <h3>Variables</h3>
+        <ul>
+          {{#each syntax.variables}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+
+        <h3>Functions</h3>
+        <ul>
+          {{#each syntax.functions}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+
+        <h3>Conditionals</h3>
+        <ul>
+          {{#each syntax.conditionals}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+
+        <h3>Loops</h3>
+        <ul>
+          {{#each syntax.loops}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+
+        <h3>Classes</h3>
+        <ul>
+          {{#each syntax.classes}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </ul>
+
+      <h2>Features</h2>
+      <ul>
+        {{#each features}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Libraries</h2>
+      <ul>
+        {{#each libraries}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Tools</h2>
+      <ul>
+        {{#each tools}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Community</h2>
+      <ul>
+        {{#each community}}
+          <li>
+            {{name}}
+            —
+            {{type}}
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
