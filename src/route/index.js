@@ -312,11 +312,7 @@ router.get('/work', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-
-  
-
     layout: 'basic',
-
 
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
@@ -1014,7 +1010,6 @@ router.get('/js', function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
-
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/bootstrap', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1168,7 +1163,6 @@ router.get('/task22', function (req, res) {
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
-
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
     name: 'Facebook',
@@ -1321,7 +1315,6 @@ router.get('/facebook', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
 
 // ================================================================
 // ================================================================
