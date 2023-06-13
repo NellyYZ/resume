@@ -3,10 +3,8 @@
     {{#with navigation}}
       <div class='nav'>
         {{#each links}}
-          <a
-            href='{{href}}'
-            class='nav-link'
-          >{{text}}</a>{{/each}}
+          <a href='{{href}}' class='nav-link'>{{text}}</a>
+         {{/each}}
       {{/with}}
       <a href='#' class='nav-link disabled'>Blabla</a>
       </div>
@@ -130,8 +128,10 @@
 
   {{#each footer.[3]}}  
   <div class='nav nav-item'>
+    {{#each this}}
   <a href='link' class='nav-link disabled'>{{text}}</a>
   </div>  
+  {{/each}}
   {{/each}}
 
   </div>

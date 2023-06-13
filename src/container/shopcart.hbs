@@ -1,0 +1,164 @@
+<nav>
+  {{#with navigation}}
+    <div class='card'>
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a class='nav-link' href='{{href}}'>{{text}}</a>
+          </div>
+        {{/each}}
+        <a href='#' class='nav-link disabled'>Blabla</a>
+      </div>
+    </div>
+  {{/with}}
+</nav>
+
+<header class='my-5'>
+  {{#with header}}
+    <h1 class='pb-2'>{{title}}</h1>
+    {{#with button}}
+      <a
+        href='link'
+        class='btn btn-outline-secondary'
+      >{{text}}</a>
+    {{/with}}
+  {{/with}}
+</header>
+
+<main>
+  <div class='card'>
+    <div class='row mt-3'>    
+      {{#each goodsBlock}}      
+        <div class='col-2 my-2'>
+          <img src='{{image}}' />
+        </div>
+        <div class='col-4'>
+          <h4>{{name}}</h4>
+          <p>{{description}}</p>
+        </div>
+        <div class='col-2'>
+        {{#with price}}
+          {{title}}
+          <div class='display-6'>
+            {{value}}
+          </div>
+        {{/with}}
+        </div>
+        <div class='col-2'>
+          {{amount}}
+        </div>
+        <div class='col-2'>
+          {{#each buttons}}
+            <button class='mb-2 btn btn-lg btn-{{#if isPrimary}}primary{{/if}}{{#if isDanger}}outline-danger{{/if}}'>{{text}}</button>
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  
+  <div class='card py-5'>
+    {{#with total}}
+      <h2>{{title}}</h2>
+      <div class='display-5 my-2'><strong>{{amount}}</strong></div>
+      <div  class='col-4 pb-4'>{{delivery}}</div>
+      <div  class='col-4 pb-3'>
+       {{#each buttons}}
+            <a href='{{link}}' class='mb-2 btn btn-lg btn-{{#if isSuccess}}success{{/if}}{{#if isOutline}}outline-success{{/if}}'>{{text}}</a><br>
+          {{/each}}
+      </div>
+    {{/with}}
+  </div>
+
+  <div class='card py-5'>
+    {{#with goodsOtherBlock}}
+      <h3 class='text-center'>{{title}}</h3>
+  
+      <div class='row'>
+        {{#each cards}}
+          <div class='col-4'>
+            <div class='card'>
+            
+              <img class='card-img-top' src='{{image}}'>
+              <div class='card-body'>
+                <div class='nav'>                
+                    <h5 class='card-title'>{{title}}</h5>               
+                     <div class='badge text-bg-warning rounded-pill text-uppercase nav-item p-2 ms-2'>{{#if isHot}}Hot!{{/if}}</div>
+                     <div class='badge text-bg-primary rounded-pill text-capitalized nav-item p-2 ms-2'>{{#if idNew}}New{{/if}}</div>                
+                   <p>{{description}}</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/with}} 
+  </div>
+
+<div class='card py-3 text-bg-dark'>
+  {{#with subscribe}}
+  <h2>{{header}}</h2>
+  <p>{{description}}</p>
+
+  <div class='col-2'>
+    {{#each buttons}}
+      <a class='btn btn-primary my-2' href='{{link}}'>{{text}}</a>
+    {{/each}}
+  </div>
+  {{/with}}
+</div>
+</main>
+
+<footer class='card pt-5'>
+
+    
+   
+  <div  class='row'>
+    <div class='col-2'>
+      {{#each footer.[0]}} 
+      <div class='nav nav-item'>
+      <a href='link' class='nav nav-item nav-link'>{{text}}</a>
+      </div>
+      {{/each}}
+    </div>
+  
+  <div class='col-2'>
+    {{#each footer.[1]}}
+    <div class='nav nav-item'>
+    <a href='link' class='nav-link'>{{text}}</a>
+    </div>
+    {{/each}}
+  </div>
+  
+  <div class='col-2'>
+    {{#each footer.[2]}}
+    <div class='nav nav-item'>
+    <a href='link' class='nav-link'>{{text}}</a>
+    </div>
+    {{/each}}
+    </div>
+  
+    <div class='col-2'>
+     {{#each footer.[3]}}
+    <div class='nav nav-item'>
+    <a href='link' class='nav-link'>{{text}}</a>
+    </div>
+    {{/each}}
+  </div>
+  
+   <div class='col-2'>
+     {{#each footer.[3]}}
+    <div class='nav nav-item'>
+    <a href='link' class='nav-link'>{{text}}</a>
+    </div>
+    {{/each}}
+  </div>
+
+  </div>
+
+</footer>
+<br>
+<br>
+<br>
+
+ 
