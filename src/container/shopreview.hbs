@@ -1,0 +1,210 @@
+<main>
+  <section>
+    <div class='row'>
+      <div class='col-8 py-3'>
+        <div class='card'>
+          {{#with formBlock}}
+            <h1>{{header}}</h1>
+            {{#with rating}}
+              <p>{{title}}: {{value}}</p>
+            {{/with}}
+  
+            {{#with actionBlock}}
+              <div class='nav nav-tabs'>
+                {{#each tabs}}
+                  <div class='nav-item'>
+                    {{#if isActive}}
+                      <a
+                        href='#'
+                        class='nav-link active'
+                      >{{text}}</a>
+                    {{else}}
+                      <a
+                        href='#'
+                        class='nav-link'
+                      >{{text}}</a>
+                    {{/if}}
+                  </div>
+                {{/each}}
+              </div>
+  
+              <div class='card mt-5 p-3'>
+                {{#with report}}
+                  {{title}}
+                  <div class='mt-2'>
+                    {{#with button}}
+                      <a
+                        href='{{link}}'
+                        class='btn btn-secondary'
+                      >{{text}}</a>
+                    {{/with}}
+                  </div>
+                {{/with}}
+              </div>
+            {{/with}}
+  
+            {{#with feedbackBlock}}
+              <h2 class='my-5'>{{title}}</h2>
+              <div class='mb-5'>
+                {{#each buttons}}
+                <a href="{{link}}" class='btn btn-{{#if isSuccess}}success{{/if}}{{#if isWarning}}warning{{/if}}{{#if isDanger}}danger{{/if}}'>{{text}}</a>
+                {{/each}}              
+              </div>
+            {{/with}}
+           </div>
+          </div>
+            <div class='col-4'>
+             
+                {{#with goodsInfo}}
+                
+                  <div class='card'>
+                    <div class='p-3'>
+                      <img src="{{photo}}" alt="{{name}}">
+                    </div>
+                  
+                    <h4 class='m-3'>{{name}}</h4>
+                  </div>
+                  <div class='card my-2'>
+                    <h4 class='m-3'>{{price}}</h4>
+                    <p class='ps-3'>{{#if inMarket}}Є в наявності{{/if}}</p>
+                    <div class='ps-2 pb-2'>
+                      {{#each buttons}}
+                      <a class='m-2 btn btn-{{#if isPrimary}}primary{{/if}}{{#if isSecondary}}secondary{{/if}}' href="{{link}}">{{text}}</a><br>
+                      {{/each}}
+                    </div>
+                  </div>
+                   <div class='card p-3 my-2'>
+                     {{#with seller}}
+                      {{title}}: {{value}}
+                     {{/with}}
+                   </div>
+                {{/with}}
+            </div>
+          {{/with}}
+    </div>
+  </section>
+
+  <section>
+    <div class='card p-3'>     
+        {{#each reviewList}}
+          <div class='card ps-2'>
+            {{#with title}}
+              <h3>{{userName}}</h3>
+              <p>{{caption}}</p>
+              {{date}}
+            {{/with}}
+          </div>
+          <div class='card ps-3 mb-3'>
+            {{#with reviewBody}}
+              <div>
+                {{#with seller}}
+                  {{title}}: {{value}}
+                {{/with}}
+              </div>
+              <div>
+                {{#with rating}}
+                  {{title}}: {{value}}
+                {{/with}}
+              </div>
+              <div>
+                {{#with text}}
+                  {{this}}
+                {{/with}}
+              </div>
+              {{#with advantages}}
+                <strong>{{title}}:</strong>
+                {{text}}
+              {{/with}}
+              {{#with disadvantages}}
+                <strong>{{title}}:</strong>
+                {{text}}
+              {{/with}}
+              <div class='mb-2'>
+                {{#each images}}
+                  <img src='{{this}}'>
+                {{/each}}
+              </div>
+           </div>
+          {{#each coments}}
+            <div class='card ms-5 my-2 p-2 pb-0'>
+              <h5>{{userName}}</h5>
+              <p>{{date}}</p>
+              <p>{{text}}</p>
+            </div>
+          {{/each}}
+          {{/with}}
+          
+  
+  
+  
+        {{/each}}
+      
+    </div>
+  </main>
+  </section>
+
+  <footer>
+    <section class='card text-bg-success my-3'>
+    {{#with service}}
+    <h2 class='text-center ms-2 mt-2 mb-4'>{{title}}</h2>
+    <p class='text-center m-2'>{{description}}</p>
+    <div class='row'>
+      {{#each buttons}}
+      <div class='col-12 text-center'>
+        
+          <a class='mx-25 btn btn-primary m-2'href='{{link}}'>{{text}}</a>
+        
+      </div>
+      {{/each}}
+    </div>
+    {{/with}}
+  
+  </section>
+  
+  <div class='card mt-5 pt-2'>
+  
+    <div  class='row'>
+      <div class='col-2'>
+        {{#each footer.[0]}} 
+        <div class='nav nav-item'>
+        <a href='link' class='nav-link {{#if @last}}disabled{{/if}}'>{{text}}</a>
+        </div>
+        {{/each}}
+      </div>
+    
+    <div class='col-2'>
+      {{#each footer.[1]}}
+      <div class='nav nav-item'>
+      <a href='link' class='nav-link {{#if @last}}disabled{{/if}}'>{{text}}</a>
+      </div>
+      {{/each}}
+    </div>
+    
+    <div class='col-2'>
+      {{#each footer.[2]}}
+      <div class='nav nav-item'>
+      <a href='link' class='nav-link {{#if @last}}disabled{{/if}}'>{{text}}</a>
+      </div>
+      {{/each}}
+      </div>
+    
+      <div class='col-3'>
+       {{#each footer.[3]}}
+      <div class='nav nav-item'>
+      <a href='link' class='nav-link {{#if @last}}disabled{{/if}}'>{{text}}</a>
+      </div>
+      {{/each}}
+    </div>
+    
+     <div class='col-3'>
+       {{#each footer.[3]}}
+      <div class='nav nav-item'>
+      <a href='link' class='nav-link {{#if @last}}disabled{{/if}}'>{{text}}</a>
+      </div>
+      {{/each}}
+    </div>
+  
+    </div>
+  
+  </div>
+  </footer>
