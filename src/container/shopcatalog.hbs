@@ -1,0 +1,23 @@
+<div class='col-12'>
+  <ol class='breadcrumb'>
+    {{#each breadcrumb}}
+      <li class='breadcrumb-item'>
+        <a href='{{url}}'>{{name}}</a>
+      </li>
+    {{/each}}
+  </ol>
+</div>
+
+<div>
+  <h1>{{header}}</h1>
+</div>
+<div class='select'>
+  {{#each sortBlock}}
+    <select  class='form-select' placeholder='{{placeholder}}'></select>
+     {{#each options}}     
+      <option value'{{value}}'>{{text}}</option>      
+    </select>
+     {{/each}}
+    </select>
+  {{/each}}
+</div>
